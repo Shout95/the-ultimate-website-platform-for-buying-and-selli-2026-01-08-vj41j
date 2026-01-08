@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Website Platform for Buying and Selling Websites. Sell and Buy A Website Worldwide with a 69 USD Listing Fee">
+    <meta name="keywords" content="buy websites, sell websites, website marketplace, domain trading">
+    <meta name="author" content="Tentrite">
+    <meta property="og:title" content="The Ultimate Website Platform for Buying and Selling Websites">
+    <meta property="og:description" content="Sell and Buy A Website Worldwide with a 69 USD Listing Fee">
+    <meta property="og:type" content="website">
+    <title>The Ultimate Website Platform for Buying and Selling Websites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 24, 39, 0.75);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-center;
+            max-w-4xl;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 300ms ease;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 500ms ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .card-hover {
+            transition: all 300ms ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            font-size: 28px;
+            color: white;
+        }
+        
+        .benefit-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 16px;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            transform: translateY(-8px);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            transition: all 300ms ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+        }
+        
+        .faq-question:hover {
+            color: #3b82f6;
+        }
+        
+        .faq-answer {
+            transition: all 300ms ease;
+            max-height: 500px;
+            overflow: hidden;
+            padding-bottom: 24px;
+        }
+        
+        .faq-answer.hidden {
+            display: none;
+        }
+        
+        .faq-icon {
+            transition: transform 300ms ease;
+            color: #3b82f6;
+        }
+        
+        .faq-icon.rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 2px;
+        }
+        
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 1.875rem;
+            }
+            
+            .hero-section {
+                min-height: 80vh;
+            }
+        }
+        
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(17, 24, 39, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 40;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 16px 24px;
+            color: #f3f4f6;
+            transition: all 200ms ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 300ms ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 300ms ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        .blog-content {
+            color: #e5e7eb;
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #f3f4f6;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #f3f4f6;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.25rem;
+            margin-left: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-content strong {
+            color: #60a5fa;
+        }
+
+        .blog-featured-image {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border-radius: 16px;
+            margin: 2rem 0;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
+        }
+
+        .blog-highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hidden sm:inline">Tentrite</span>
+                </div>
+                <a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j" class="nav-link text-gray-300 hover:text-white transition-colors">
+                    ← Back
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Content Section -->
+    <section class="pt-32 pb-24 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Blog Header -->
+            <div class="mb-12">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+                    How to Successfully <span class="gradient-text">Sell Your Website</span> in 2024
+                </h1>
+                <div class="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-calendar"></i>
+                        January 8, 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-clock"></i>
+                        8 min read
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-user"></i>
+                        By Tentrite Team
+                    </span>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=675&fit=crop&q=80" alt="Professional analyzing website analytics and sales data on computer dashboard" class="blog-featured-image">
+
+            <!-- Blog Content -->
+            <article class="blog-content">
+                <p>
+                    Selling a website has become an increasingly popular way for entrepreneurs and developers to monetize their digital assets. Whether you've built a successful blog, an e-commerce store, or a SaaS application, understanding how to properly position and sell your website can make the difference between a quick sale and months of waiting. In this comprehensive guide, we'll walk you through everything you need to know about selling your website successfully in 2024.
+                </p>
+
+                <h2>Understanding the Website Marketplace Landscape</h2>
+                
+                <p>
+                    The digital asset marketplace has evolved dramatically over the past five years. Today, platforms like Tentrite make it easier than ever to connect with qualified buyers from around the world. The global website marketplace is worth billions of dollars, with thousands of transactions happening every month. Understanding this landscape is crucial for positioning your website effectively.
+                </p>
+
+                <p>
+                    When you list a website for sale, you're entering a competitive marketplace where buyers are looking for specific characteristics: consistent revenue, strong traffic, quality backlinks, and sustainable business models. The most successful sellers are those who understand what buyers want and can clearly demonstrate the value of their digital assets.
+                </p>
+
+                <div class="blog-highlight">
+                    <strong>Key Insight:</strong> According to recent marketplace data, websites with documented revenue streams and consistent traffic patterns sell 3x faster than those without clear metrics. This is why transparency and detailed analytics are crucial.
+                </div>
+
+                <h2>Preparing Your Website for Sale</h2>
+
+                <p>
+                    Before listing your website on any marketplace, preparation is essential. The first step is to audit your website thoroughly and ensure everything is in perfect working order. This includes checking all links, testing functionality, reviewing content quality, and ensuring your website loads quickly across all devices.
+                </p>
+
+                <h3>Essential Preparation Steps</h3>
+
+                <ul>
+                    <li><strong>Audit Your Analytics:</strong> Gather at least 12 months of traffic and revenue data. Buyers want to see consistent performance and growth trends. Use Google Analytics, Stripe, PayPal, and other tools to compile comprehensive financial records.</li>
+                    <li><strong>Clean Up Your Code:</strong> Remove any outdated plugins, clean up your database, and ensure your website is built on a stable, modern technology stack. Buyers will investigate your backend thoroughly.</li>
+                    <li><strong>Document Everything:</strong> Create a detailed document outlining all systems, passwords (securely), third-party integrations, and operational procedures. This makes the transition smooth for the buyer.</li>
+                    <li><strong>Fix Technical Issues:</strong> Address any broken links, slow loading times, or security vulnerabilities. A website in excellent technical condition commands higher prices.</li>
+                    <li><strong>Verify Ownership:</strong> Ensure you have clear documentation of domain ownership, hosting accounts, and all associated digital assets.</li>
+                </ul>
+
+                <p>
+                    Taking time to properly prepare your website demonstrates professionalism to potential buyers and significantly increases the likelihood of a successful sale. Buyers are willing to pay premium prices for websites that are well-maintained, fully documented, and ready for immediate operation.
+                </p>
+
+                <h2>Pricing Your Website Correctly</h2>
+
+                <p>
+                    One of the most critical decisions you'll make is determining the right asking price. Price your website too high, and you'll receive few inquiries. Price it too low, and you'll leave significant money on the table. The most common valuation method in the website marketplace is the revenue multiple approach.
+                </p>
+
+                <p>
+                    Websites typically sell for 2-5 times their annual net profit, depending on various factors. A website generating $50,000 annually might sell for $100,000 to $250,000. However, several factors can influence this multiple:
+                </p>
+
+                <ul>
+                    <li><strong>Growth Trajectory:</strong> Websites showing consistent growth command higher multiples. If your traffic and revenue are increasing month-over-month, buyers will pay more.</li>
+                    <li><strong>Niche Demand:</strong> Websites in high-demand niches (technology, finance, health) often sell for higher multiples than niche blogs.</li>
+                    <li><strong>Traffic Quality:</strong> Organic traffic from search engines is more valuable than paid traffic or referral traffic, as it's more sustainable.</li>
+                    <li><strong>Revenue Diversification:</strong> Websites with multiple revenue streams are less risky and command higher prices.</li>
+                    <li><strong>Customer Acquisition Cost:</strong> If you've built an email list or loyal customer base, that's extremely valuable to buyers.</li>
+                </ul>
+
+                <div class="blog-highlight">
+                    <strong>Pro Tip:</strong> Research comparable websites that have sold recently to establish realistic pricing. Many marketplaces, including Tentrite, provide data on similar sales, helping you make an informed decision.
+                </div>
+
+                <h2>Creating a Compelling Listing</h2>
+
+                <p>
+                    Your listing is your sales pitch. It needs to be compelling, comprehensive, and professional. When creating your listing on Tentrite or any other marketplace, follow these best practices to maximize visibility and attract qualified buyers.
+                </p>
+
+                <h3>Listing Essentials</h3>
+
+                <ul>
+                    <li><strong>Headline:</strong> Make it clear, specific, and benefit-focused. Instead of "Website for Sale," try "Profitable E-commerce Site with $120K Annual Revenue."</li>
+                    <li><strong>Description:</strong> Write a detailed description that tells the story of your website. Explain how you built it, what problems it solves, and why it's valuable.</li>
+                    <li><strong>Financial Data:</strong> Provide clear, verifiable revenue and expense information. Include traffic statistics, conversion rates, and growth trends.</li>
+                    <li><strong>Screenshots:</strong> Include high-quality screenshots of your website, dashboard, and key pages. Visual representation helps buyers understand your site quickly.</li>
+                    <li><strong>Monetization Details:</strong> Clearly explain your revenue sources. Whether it's advertising, affiliate marketing, e-commerce, or subscriptions, buyers need to understand how money is made.</li>
+                </ul>
+
+                <p>
+                    The most successful listings are those that provide complete transparency. Buyers appreciate sellers who are open about their website's performance, challenges, and opportunities. This transparency builds trust and often leads to faster sales and better offers.
+                </p>
+
+                <h2>Marketing Your Website Listing</h2>
+
+                <p>
+                    Simply listing your website isn't enough. You need to actively market your listing to reach potential buyers. While platforms like Tentrite provide built-in exposure through their marketplace and search optimization, you can do more to increase visibility.
+                </p>
+
+                <p>
+                    Share your listing on relevant forums, social media communities, and networks where potential buyers congregate. Participate in entrepreneurship communities, startup forums, and business groups. Answer questions and engage with interested parties professionally. The more exposure your listing gets, the more offers you'll likely receive.
+                </p>
+
+                <p>
+                    Consider reaching out directly to potential buyers in your niche. If you know of individuals or companies that might benefit from owning your website, a personal outreach can be highly effective. Many successful website sales come from direct negotiations rather than passive marketplace browsing.
+                </p>
+
+                <h2>Navigating the Sales Process</h2>
+
+                <p>
+                    Once you receive offers, the real negotiation begins. Be prepared to discuss your website's metrics, answer detailed questions about operations, and potentially share additional documentation with serious buyers. Most buyers will request access to Google Analytics, financial records, and backend systems before making a final decision.
+                </p>
+
+                <p>
+                    Use a secure platform like Tentrite's escrow system to handle the transaction. Never transfer ownership or access until payment is confirmed. A good marketplace will protect both parties and ensure the transaction is legitimate and secure.
+                </p>
+
+                <div class="blog-highlight">
+                    <strong>Safety Note:</strong> Always use an escrow service when selling your website. This protects you from fraud and ensures the buyer receives what they're paying for. Tentrite's secure transaction system handles all of this automatically.
+                </div>
+
+                <h2>Maximizing Your Sale Price</h2>
+
+                <p>
+                    To get the highest possible price for your website, focus on these key strategies:
+                </p>
+
+                <ul>
+                    <li><strong>Improve Metrics Before Selling:</strong> If possible, grow your traffic and revenue in the months before listing. A website showing growth trends sells for higher multiples.</li>
+                    <li><strong>Build an Email List:</strong> An engaged email subscriber list is incredibly valuable to buyers. Invest in building this before selling.</li>
+                    <li><strong>Diversify Revenue:</strong> If your website relies on a single revenue source, add additional streams. Multiple revenue sources reduce risk and increase value.</li>
+                    <li><strong>Create Systems:</strong> Document and systematize everything. A website that runs on automation and systems is more valuable than one dependent on the owner's daily involvement.</li>
+                    <li><strong>Improve SEO:</strong> Organic search traffic is the most valuable form of traffic. Invest in SEO to boost your rankings and organic traffic before selling.</li>
+                </ul>
+
+                <h2>Common Mistakes to Avoid</h2>
+
+                <p>
+                    Learning from others' mistakes can save you time and money. Here are the most common mistakes website sellers make:
+                </p>
+
+                <p>
+                    <strong>Overpricing:</strong> While it's tempting to ask for the highest possible price, overpricing your website will result in it sitting on the marketplace for months. Price competitively based on actual market data.
+                </p>
+
+                <p>
+                    <strong>Lack of Documentation:</strong> Buyers want to understand exactly how your website works and generates revenue. Incomplete documentation kills deals. Invest time in creating comprehensive documentation.
+                </p>
+
+                <p>
+                    <strong>Ignoring Red Flags:</strong> Be cautious of buyers who seem too good to be true or who pressure you to bypass escrow services. Legitimate buyers understand and respect proper procedures.
+                </p>
+
+                <p>
+                    <strong>Poor Communication:</strong> Respond promptly to inquiries and be professional in all communications. Poor communication creates doubt about the legitimacy of your website or your reliability as a seller.
+                </p>
+
+                <h2>The Future of Website Selling</h2>
+
+                <p>
+                    The website marketplace continues to grow and evolve. Platforms like Tentrite are making it easier than ever to buy and sell digital assets. With affordable listing fees and global reach, more entrepreneurs are taking advantage of this opportunity to monetize their websites.
+                </p>
+
+                <p>
+                    As the market matures, successful sellers are those who understand that a website is not just code and content—it's a business with real value. By treating your website sale professionally, providing complete transparency, and using secure platforms, you can maximize your returns and find the right buyer for your digital asset.
+                </p>
+
+                <h2>Getting Started with Tentrite</h2>
+
+                <p>
+                    Ready to sell your website? Tentrite makes the process simple and affordable. With a flat $69 listing fee and no commission on your sale price, you keep 100% of what you earn. Our platform handles the technical details, security, and buyer verification so you can focus on what matters most—making the sale.
+                </p>
+
+                <p>
+                    Whether you're selling a blog, e-commerce site, SaaS application, or any other digital property, Tentrite connects you with qualified buyers from around the world. Our SEO-optimized listings ensure maximum visibility, and our secure escrow system protects both parties throughout the transaction.
+                </p>
+
+                <p>
+                    Don't let your website sit idle. Monetize your digital asset today by listing it on Tentrite. Thousands of successful sellers have already found buyers for their websites on our platform. You could be next.
+                </p>
+
+                <div class="blog-highlight">
+                    <strong>Ready to Sell?</strong> Start your listing today on Tentrite. With our simple process, affordable fees, and global marketplace, selling your website has never been easier. Visit tentritepremed.agency to get started.
+                </div>
+            </article>
+
+            <!-- Call to Action -->
+            <div class="mt-16 pt-12 border-t border-gray-700">
+                <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl border border-blue-500/30">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Sell Your Website?</h3>
+                    <p class="text-gray-300 mb-6">
+                        Join thousands of successful sellers on Tentrite. List your website today and reach millions of potential buyers worldwide. With a flat $69 listing fee and no commission, you keep 100% of your sale price.
+                    </p>
+                    <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="cta-button inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300">
+                        Start Your Listing
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-globe text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Tentrite</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The world's leading marketplace for buying and selling websites, apps, and digital businesses.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#features" class="text-gray-400 hover:text-blue-400 transition-colors">Features</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#benefits" class="text-gray-400 hover:text-blue-400 transition-colors">Benefits</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#about" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="blog.html" class="text-gray-400 hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#faq" class="text-gray-400 hover:text-blue-400 transition-colors">FAQ</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:shoutweb95@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope"></i>
+                                <span>shoutweb95@gmail.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-globe"></i>
+                                <span>Visit Website</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="py-8 border-t border-gray-800 mb-8">
+                <div class="flex justify-center items-center gap-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-youtube text-white"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; <span id="year">2024</span> Tentrite. All rights reserved. | 
+                    <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy Policy</a> | 
+                    <a href="terms.html" class="hover:text-blue-400 transition-colors">Terms of Service</a> | 
+                    <a href="blog.html" class="hover:text-blue-400 transition-colors">Blog</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
