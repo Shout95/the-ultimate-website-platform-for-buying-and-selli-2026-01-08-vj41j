@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Website Platform for Buying and Selling Websites. Sell and Buy A Website Worldwide with a 69 USD Listing Fee">
+    <meta name="keywords" content="buy websites, sell websites, website marketplace, domain trading">
+    <meta name="author" content="Tentrite">
+    <meta property="og:title" content="The Ultimate Website Platform for Buying and Selling Websites">
+    <meta property="og:description" content="Sell and Buy A Website Worldwide with a 69 USD Listing Fee">
+    <meta property="og:type" content="website">
+    <title>Privacy Policy - The Ultimate Website Platform for Buying and Selling Websites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 24, 39, 0.75);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-center;
+            max-w-4xl;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 300ms ease;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 500ms ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .card-hover {
+            transition: all 300ms ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            font-size: 28px;
+            color: white;
+        }
+        
+        .benefit-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 16px;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            transform: translateY(-8px);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            transition: all 300ms ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+        }
+        
+        .faq-question:hover {
+            color: #3b82f6;
+        }
+        
+        .faq-answer {
+            transition: all 300ms ease;
+            max-height: 500px;
+            overflow: hidden;
+            padding-bottom: 24px;
+        }
+        
+        .faq-answer.hidden {
+            display: none;
+        }
+        
+        .faq-icon {
+            transition: transform 300ms ease;
+            color: #3b82f6;
+        }
+        
+        .faq-icon.rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 2px;
+        }
+        
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 1.875rem;
+            }
+            
+            .hero-section {
+                min-height: 80vh;
+            }
+        }
+        
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(17, 24, 39, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 40;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 16px 24px;
+            color: #f3f4f6;
+            transition: all 200ms ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 300ms ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 300ms ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        .policy-section {
+            background: bg-gray-900;
+            padding: 3rem 0;
+        }
+
+        .policy-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #f3f4f6;
+        }
+
+        .policy-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #d1d5db;
+        }
+
+        .policy-content p {
+            color: #9ca3af;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content ul {
+            list-style: disc;
+            padding-left: 2rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hidden sm:inline">Tentrite</span>
+                </a>
+                
+                <!-- Back Link -->
+                <a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j" class="nav-link text-gray-300 hover:text-white transition-colors">
+                    ← Back
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section for Privacy Policy -->
+    <section class="pt-32 pb-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
+                    Privacy Policy
+                </h1>
+                <p class="text-xl text-gray-400 mb-4">
+                    Last updated: January 2024
+                </p>
+                <p class="text-lg text-gray-400">
+                    Your privacy is important to us. Learn how we collect, use, and protect your information.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 policy-content">
+            
+            <!-- Introduction -->
+            <div class="mb-12">
+                <h2>Introduction</h2>
+                <p>
+                    Tentrite ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site").
+                </p>
+                <p>
+                    Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our Site. By accessing and using Tentrite, you acknowledge that you have read, understood, and agree to be bound by all the provisions of this Privacy Policy.
+                </p>
+                <p>
+                    We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the "Last updated" date of this Privacy Policy. Any changes or modifications will be effective immediately upon posting the updated Privacy Policy on the Site, and you waive the right to receive specific notice of each such change or modification.
+                </p>
+            </div>
+
+            <!-- Information We Collect -->
+            <div class="mb-12">
+                <h2>Information We Collect</h2>
+                
+                <h3>Information You Provide Directly</h3>
+                <p>
+                    We collect information that you provide directly to us, such as when you create an account, list a website, make a purchase, or contact us with inquiries. This information may include:
+                </p>
+                <ul>
+                    <li>Personal identification information (name, email address, phone number, mailing address)</li>
+                    <li>Payment information (credit card details, billing address, transaction history)</li>
+                    <li>Website information (URL, traffic data, revenue figures, website analytics)</li>
+                    <li>Account profile information (username, password, preferences)</li>
+                    <li>Communications (messages, inquiries, support tickets, feedback)</li>
+                    <li>Identity verification documents (government-issued ID, business registration documents)</li>
+                </ul>
+
+                <h3>Information Collected Automatically</h3>
+                <p>
+                    When you access our Site, we automatically collect certain information about your device and how you interact with our platform:
+                </p>
+                <ul>
+                    <li>Device information (IP address, browser type, operating system, device type)</li>
+                    <li>Usage data (pages visited, time spent on pages, links clicked, search queries)</li>
+                    <li>Location information (approximate geographic location based on IP address)</li>
+                    <li>Cookies and similar tracking technologies (as described in our Cookie Policy section)</li>
+                    <li>Referral information (how you accessed our Site)</li>
+                </ul>
+
+                <h3>Information from Third Parties</h3>
+                <p>
+                    We may receive information about you from third parties, including:
+                </p>
+                <ul>
+                    <li>Payment processors and financial institutions</li>
+                    <li>Identity verification services</li>
+                    <li>Social media platforms (if you choose to connect your account)</li>
+                    <li>Business partners and affiliates</li>
+                    <li>Publicly available sources</li>
+                </ul>
+            </div>
+
+            <!-- How We Use Your Information -->
+            <div class="mb-12">
+                <h2>How We Use Your Information</h2>
+                <p>
+                    We use the information we collect for various purposes, including:
+                </p>
+                <ul>
+                    <li>Creating and managing your account</li>
+                    <li>Processing transactions and payments</li>
+                    <li>Providing customer support and responding to inquiries</li>
+                    <li>Verifying your identity and preventing fraud</li>
+                    <li>Sending transactional emails (order confirmations, password resets, etc.)</li>
+                    <li>Sending marketing communications (newsletters, promotions, updates)</li>
+                    <li>Personalizing your experience and improving our Site</li>
+                    <li>Analyzing usage patterns and trends</li>
+                    <li>Complying with legal obligations and enforcing our Terms of Service</li>
+                    <li>Protecting the rights, privacy, safety, and property of our users and the public</li>
+                    <li>Detecting, preventing, and addressing fraud and security issues</li>
+                    <li>Conducting research and analytics</li>
+                    <li>Marketing and promotional purposes</li>
+                </ul>
+                <p>
+                    We will not sell, trade, or rent your personal information to third parties without your explicit consent, except as required by law or as described in this Privacy Policy.
+                </p>
+            </div>
+
+            <!-- Disclosure of Your Information -->
+            <div class="mb-12">
+                <h2>Disclosure of Your Information</h2>
+                <p>
+                    We may disclose your information in the following circumstances:
+                </p>
+                <ul>
+                    <li><strong>Service Providers:</strong> We share information with third parties who provide services on our behalf, including payment processors, hosting providers, analytics services, and customer support platforms.</li>
+                    <li><strong>Business Partners:</strong> We may share information with our business partners for joint marketing initiatives and other collaborative purposes.</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose your information if required by law, court order, or government request, or to protect the rights, privacy, safety, or property of Tentrite, our users, or the public.</li>
+                    <li><strong>Business Transfers:</strong> If Tentrite is acquired, merged, or undergoes a change in control, your information may be transferred as part of that transaction.</li>
+                    <li><strong>With Your Consent:</strong> We may disclose your information for other purposes with your explicit consent.</li>
+                </ul>
+            </div>
+
+            <!-- Cookie Policy -->
+            <div class="mb-12">
+                <h2>Cookie Policy</h2>
+                
+                <h3>What Are Cookies?</h3>
+                <p>
+                    Cookies are small files that are stored on your device when you visit our Site. They contain information about your browsing activity and preferences. Cookies help us recognize you, remember your preferences, and understand how you use our Site.
+                </p>
+
+                <h3>Types of Cookies We Use</h3>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> These cookies are necessary for the Site to function properly. They enable basic features such as page navigation and access to secure areas.</li>
+                    <li><strong>Performance Cookies:</strong> These cookies collect information about how you use our Site, such as which pages you visit and how long you stay on them. This helps us improve the performance and functionality of our Site.</li>
+                    <li><strong>Functionality Cookies:</strong> These cookies remember your preferences and choices, such as your language preference and login information, to provide a more personalized experience.</li>
+                    <li><strong>Marketing Cookies:</strong> These cookies track your activity across websites to deliver targeted advertisements and marketing content relevant to your interests.</li>
+                    <li><strong>Third-Party Cookies:</strong> Third-party services such as Google Analytics and advertising networks may place their own cookies on your device.</li>
+                </ul>
+
+                <h3>Managing Cookies</h3>
+                <p>
+                    Most web browsers allow you to control cookies through their settings. You can choose to accept or reject cookies, or to be notified when a cookie is being sent. However, blocking cookies may affect your ability to use certain features of our Site. For more information about managing cookies, please visit your browser's help documentation.
+                </p>
+
+                <h3>Do Not Track Signals</h3>
+                <p>
+                    Some browsers include a "Do Not Track" feature. Currently, there is no industry standard for recognizing Do Not Track signals, and our Site does not respond to Do Not Track browser signals. However, you can use other tools to control the collection and use of information about your online activities.
+                </p>
+            </div>
+
+            <!-- Data Security -->
+            <div class="mb-12">
+                <h2>Data Security</h2>
+                <p>
+                    We implement comprehensive security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include:
+                </p>
+                <ul>
+                    <li>SSL/TLS encryption for data transmitted over the internet</li>
+                    <li>Secure password hashing and salting</li>
+                    <li>Access controls and authentication mechanisms</li>
+                    <li>Regular security audits and vulnerability assessments</li>
+                    <li>Firewalls and intrusion detection systems</li>
+                    <li>Employee training on data protection and privacy practices</li>
+                    <li>Incident response procedures</li>
+                </ul>
+                <p>
+                    While we strive to protect your information using reasonable security measures, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security of your personal information. You are responsible for maintaining the confidentiality of your account credentials and notifying us immediately of any unauthorized access to your account.
+                </p>
+            </div>
+
+            <!-- Your Rights and Choices -->
+            <div class="mb-12">
+                <h2>Your Rights and Choices</h2>
+                <p>
+                    Depending on your location, you may have certain rights regarding your personal information:
+                </p>
+                <ul>
+                    <li><strong>Access:</strong> You have the right to request access to the personal information we hold about you.</li>
+                    <li><strong>Correction:</strong> You have the right to request correction of inaccurate or incomplete information.</li>
+                    <li><strong>Deletion:</strong> You have the right to request deletion of your personal information, subject to certain legal exceptions.</li>
+                    <li><strong>Opt-Out:</strong> You can opt out of receiving marketing communications by clicking the unsubscribe link in our emails or by contacting us directly.</li>
+                    <li><strong>Data Portability:</strong> You may have the right to receive your personal information in a portable format and transmit it to another service provider.</li>
+                    <li><strong>Withdrawal of Consent:</strong> If you have consented to the processing of your personal information, you can withdraw that consent at any time.</li>
+                </ul>
+                <p>
+                    To exercise any of these rights, please contact us using the information provided in the Contact Us section below.
+                </p>
+            </div>
+
+            <!-- Retention of Information -->
+            <div class="mb-12">
+                <h2>Retention of Information</h2>
+                <p>
+                    We retain your personal information for as long as necessary to provide our services, fulfill the purposes outlined in this Privacy Policy, and comply with legal obligations. The retention period may vary depending on the type of information and the purposes for which we use it.
+                </p>
+                <p>
+                    For example, we may retain transaction records for the duration of your account and for a period thereafter to comply with financial regulations and tax requirements. We may retain website listing information for as long as the listing is active and for a reasonable period afterward to maintain historical records.
+                </p>
+                <p>
+                    If you request deletion of your account or personal information, we will delete or anonymize your data within a reasonable timeframe, except where retention is required by law or for legitimate business purposes.
+                </p>
+            </div>
+
+            <!-- Children's Privacy -->
+            <div class="mb-12">
+                <h2>Children's Privacy</h2>
+                <p>
+                    Our Site is not intended for children under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information and terminate the child's account.
+                </p>
+                <p>
+                    If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at the email address provided below.
+                </p>
+            </div>
+
+            <!-- Third-Party Links -->
+            <div class="mb-12">
+                <h2>Third-Party Links and Services</h2>
+                <p>
+                    Our Site may contain links to third-party websites, applications, and services that are not operated by Tentrite. This Privacy Policy does not apply to third-party websites or services, and we are not responsible for their privacy practices. We encourage you to review the privacy policies of any third-party services before providing your personal information.
+                </p>
+                <p>
+                    If you access our Site through a third-party platform or service, that platform may collect information about your activity on our Site in accordance with their own privacy policies.
+                </p>
+            </div>
+
+            <!-- International Data Transfers -->
+            <div class="mb-12">
+                <h2>International Data Transfers</h2>
+                <p>
+                    Your personal information may be transferred to, stored in, and processed in countries other than your country of residence. These countries may have data protection laws that are different from your home country. By using our Site, you consent to the transfer of your personal information to countries outside your country of residence, which may not have the same data protection laws.
+                </p>
+                <p>
+                    We implement appropriate safeguards to protect your personal information when it is transferred internationally, including standard contractual clauses and your explicit consent.
+                </p>
+            </div>
+
+            <!-- GDPR and CCPA Compliance -->
+            <div class="mb-12">
+                <h2>GDPR and CCPA Compliance</h2>
+                
+                <h3>General Data Protection Regulation (GDPR)</h3>
+                <p>
+                    If you are a resident of the European Union, European Economic Area, or Switzerland, you have certain rights under the GDPR, including the right to access, correct, delete, and port your personal information. We process your personal information based on your consent, our legitimate business interests, or other legal bases as permitted under GDPR.
+                </p>
+                <p>
+                    You have the right to lodge a complaint with your local data protection authority if you believe we have violated your privacy rights.
+                </p>
+
+                <h3>California Consumer Privacy Act (CCPA)</h3>
+                <p>
+                    If you are a California resident, you have certain rights under the CCPA, including the right to know what personal information we collect, the right to delete your personal information, and the right to opt-out of the sale of your personal information. We do not sell personal information in exchange for monetary consideration, but we may share information with service providers as described in this Privacy Policy.
+                </p>
+                <p>
+                    To exercise your CCPA rights, please submit a request to the contact information provided below.
+                </p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mb-12">
+                <h2>Contact Us</h2>
+                <p>
+                    If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:
+                </p>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 mt-4">
+                    <p class="mb-2">
+                        <strong>Email:</strong> <a href="mailto:shoutweb95@gmail.com" class="text-blue-400 hover:text-blue-300">shoutweb95@gmail.com</a>
+                    </p>
+                    <p class="mb-2">
+                        <strong>Website:</strong> <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">https://tentritepremed.agency</a>
+                    </p>
+                    <p>
+                        We will respond to your inquiry within 30 days of receipt. If you are not satisfied with our response, you may have the right to lodge a complaint with your local data protection authority.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Changes to Privacy Policy -->
+            <div>
+                <h2>Changes to This Privacy Policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, and other factors. We will notify you of any material changes by posting the updated Privacy Policy on our Site and updating the "Last updated" date at the top of this page.
+                </p>
+                <p>
+                    Your continued use of our Site following the posting of revised Privacy Policy means that you accept and agree to the changes. We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-globe text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Tentrite</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The world's leading marketplace for buying and selling websites, apps, and digital businesses.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#features" class="text-gray-400 hover:text-blue-400 transition-colors">Features</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#benefits" class="text-gray-400 hover:text-blue-400 transition-colors">Benefits</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#about" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="blog.html" class="text-gray-400 hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="https://Shout95.github.io/the-ultimate-website-platform-for-buying-and-selli-2026-01-08-vj41j#faq" class="text-gray-400 hover:text-blue-400 transition-colors">FAQ</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:shoutweb95@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope"></i>
+                                <span>shoutweb95@gmail.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-globe"></i>
+                                <span>Visit Website</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="py-8 border-t border-gray-800 mb-8">
+                <div class="flex justify-center items-center gap-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-youtube text-white"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; <span id="year">2024</span> Tentrite. All rights reserved. | 
+                    <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy Policy</a> | 
+                    <a href="terms.html" class="hover:text-blue-400 transition-colors">Terms of Service</a> | 
+                    <a href="blog.html" class="hover:text-blue-400 transition-colors">Blog</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
