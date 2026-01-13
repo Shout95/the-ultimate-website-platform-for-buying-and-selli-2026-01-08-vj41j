@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn website flipping strategies on our platform. Buy, sell, and flip websites for profit with expert guidance and tools.">
+    <meta name="keywords" content="website flipping, buy websites, sell websites, website arbitrage, digital assets">
+    <meta name="author" content="Tentrite">
+    <meta property="og:title" content="Website Flipping | Ultimate Website Platform">
+    <meta property="og:description" content="Learn website flipping strategies on our platform. Buy, sell, and flip websites for profit with expert guidance and tools.">
+    <meta property="og:type" content="website">
+    <title>Website Flipping | Ultimate Website Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 24, 39, 0.75);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-center;
+            max-w-4xl;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 300ms ease;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 500ms ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .card-hover {
+            transition: all 300ms ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            font-size: 28px;
+            color: white;
+        }
+        
+        .benefit-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 16px;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            transform: translateY(-8px);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            transition: all 300ms ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+        }
+        
+        .faq-question:hover {
+            color: #3b82f6;
+        }
+        
+        .faq-answer {
+            transition: all 300ms ease;
+            max-height: 500px;
+            overflow: hidden;
+            padding-bottom: 24px;
+        }
+        
+        .faq-answer.hidden {
+            display: none;
+        }
+        
+        .faq-icon {
+            transition: transform 300ms ease;
+            color: #3b82f6;
+        }
+        
+        .faq-icon.rotate-180 {
+            transform: rotate(180deg);
+        }
+        
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 2px;
+        }
+        
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 1.875rem;
+            }
+            
+            .hero-section {
+                min-height: 80vh;
+            }
+        }
+        
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(17, 24, 39, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 40;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 16px 24px;
+            color: #f3f4f6;
+            transition: all 200ms ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 300ms ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 300ms ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .case-study-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 300ms ease;
+        }
+
+        .case-study-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .profit-stat {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hidden sm:inline">Tentrite</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="index.html#features" class="nav-link text-gray-300 hover:text-white transition-colors">Features</a>
+                    <a href="index.html#benefits" class="nav-link text-gray-300 hover:text-white transition-colors">Benefits</a>
+                    <a href="index.html#about" class="nav-link text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="index.html#testimonials" class="nav-link text-gray-300 hover:text-white transition-colors">Testimonials</a>
+                    <a href="website-flipping.html" class="nav-link text-gray-300 hover:text-white transition-colors">Tentrite Website Flipping</a>
+                    <a href="index.html#faq" class="nav-link text-gray-300 hover:text-white transition-colors">FAQ</a>
+                    <a href="index.html#contact" class="nav-link text-gray-300 hover:text-white transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <nav class="mobile-menu hidden md:hidden pb-4">
+                <a href="index.html#home" class="block">Home</a>
+                <a href="index.html#features" class="block">Features</a>
+                <a href="index.html#benefits" class="block">Benefits</a>
+                <a href="index.html#about" class="block">About</a>
+                <a href="index.html#testimonials" class="block">Testimonials</a>
+                <a href="website-flipping.html" class="block">Tentrite Website Flipping</a>
+                <a href="index.html#faq" class="block">FAQ</a>
+                <a href="index.html#contact" class="block">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-20">
+        <div class="hero-content px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
+                Master the Art of <span class="gradient-text">Website Flipping</span> for Profit
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                Learn proven strategies to buy undervalued websites, improve them, and sell for significant profit. Turn digital assets into passive income streams.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="cta-button px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300 inline-flex items-center justify-center">
+                    <span>Start Your First Flip</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#process" class="cta-button px-8 py-4 border-2 border-blue-500 text-blue-400 font-bold rounded-lg hover:bg-blue-500/10 hover:scale-105 transform transition-all duration-300 inline-flex items-center justify-center">
+                    <span>Learn The Process</span>
+                    <i class="fas fa-chevron-down ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-8 text-sm text-gray-400">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>Proven Strategies</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>Expert Guidance</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>Real Case Studies</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Website Flipping Section -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">What is Website Flipping?</h2>
+                <p class="section-subtitle">Understand the fundamentals of digital asset arbitrage</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        Website flipping is the practice of buying undervalued websites, improving their performance, traffic, or monetization, and then selling them for a profit. It's similar to real estate flipping, but in the digital space. The key is identifying opportunities where you can add value and increase the website's worth before selling it.
+                    </p>
+                    
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        The beauty of website flipping is that it requires minimal capital investment compared to traditional business ventures. You can start with a budget of just a few hundred dollars and scale up as you gain experience. With the right strategies, tools, and platform like Tentrite, you can turn this into a highly profitable venture.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Low Barrier to Entry</h4>
+                                <p class="text-gray-400 text-sm">Start with minimal capital and scale your flipping business</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Passive Income Potential</h4>
+                                <p class="text-gray-400 text-sm">Build websites that generate recurring revenue before selling</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Flexible Schedule</h4>
+                                <p class="text-gray-400 text-sm">Work at your own pace and manage projects remotely</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" alt="Website Flipping" class="benefit-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step-by-Step Process Section -->
+    <section id="process" class="py-24 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">The Website Flipping Process</h2>
+                <p class="section-subtitle">Follow these proven steps to successfully flip websites for profit</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                    <div class="flex gap-6 items-start">
+                        <div class="step-number">1</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Research and Identify Opportunities</h3>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                Start by researching the marketplace to find undervalued websites. Look for sites that are priced below their potential value due to neglect, poor marketing, or lack of optimization. Use Tentrite's advanced filters to find websites in your niche with strong fundamentals but room for improvement.
+                            </p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-blue-400 text-sm"></i>
+                                    <span>Analyze traffic trends and revenue potential</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-blue-400 text-sm"></i>
+                                    <span>Check domain age and backlink profile</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-blue-400 text-sm"></i>
+                                    <span>Evaluate content quality and SEO metrics</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-purple-500 transition-all duration-300">
+                    <div class="flex gap-6 items-start">
+                        <div class="step-number" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Perform Due Diligence</h3>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                Before making an offer, conduct thorough due diligence on the website. Verify all claims about traffic, revenue, and assets. Use tools to check for penalties, malware, or other red flags. Ensure the website has clean hosting, proper documentation, and transferable assets.
+                            </p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-purple-400 text-sm"></i>
+                                    <span>Verify traffic with Google Analytics</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-purple-400 text-sm"></i>
+                                    <span>Check revenue sources and sustainability</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-purple-400 text-sm"></i>
+                                    <span>Review technical health and security</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-pink-500 transition-all duration-300">
+                    <div class="flex gap-6 items-start">
+                        <div class="step-number" style="background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Negotiate and Purchase</h3>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                Make a competitive offer based on your analysis and the website's potential. Negotiate the price to ensure you have adequate margin for improvements and profit. Use Tentrite's secure escrow system to protect both parties during the transaction.
+                            </p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-pink-400 text-sm"></i>
+                                    <span>Research comparable sales for pricing</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-pink-400 text-sm"></i>
+                                    <span>Negotiate favorable payment terms</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-pink-400 text-sm"></i>
+                                    <span>Complete secure transaction through escrow</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-green-500 transition-all duration-300">
+                    <div class="flex gap-6 items-start">
+                        <div class="step-number" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);">4</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Improve and Optimize</h3>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                This is where you add value. Improve the website's design, user experience, content quality, and SEO. Increase traffic through marketing and optimization. Diversify or increase revenue streams through better monetization strategies.
+                            </p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-green-400 text-sm"></i>
+                                    <span>Update design and improve user experience</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-green-400 text-sm"></i>
+                                    <span>Create high-quality, SEO-optimized content</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-green-400 text-sm"></i>
+                                    <span>Implement advanced monetization strategies</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-yellow-500 transition-all duration-300">
+                    <div class="flex gap-6 items-start">
+                        <div class="step-number" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">5</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-4">List and Sell</h3>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                Once you've improved the website, list it on Tentrite for just $69. Our platform will showcase your improvements and attract qualified buyers. With our SEO optimization and global reach, your improved website will get maximum visibility.
+                            </p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-yellow-400 text-sm"></i>
+                                    <span>Create compelling listing with updated metrics</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-yellow-400 text-sm"></i>
+                                    <span>Highlight improvements and growth potential</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-arrow-right text-yellow-400 text-sm"></i>
+                                    <span>Reach millions of qualified buyers globally</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profit Strategies Section -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">Proven Profit Strategies</h2>
+                <p class="section-subtitle">Maximize your returns with these proven website flipping techniques</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Strategy 1 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-blue-500">
+                    <div class="feature-icon mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Traffic Growth Strategy</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Buy websites with good fundamentals but low traffic. Implement aggressive SEO, content marketing, and social media strategies to increase traffic significantly. Higher traffic directly translates to higher valuation multiples.
+                    </p>
+                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Potential ROI:</strong> 100-300% in 3-6 months with proper optimization
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strategy 2 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-purple-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Revenue Diversification</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Acquire sites with single revenue streams and diversify them. Add affiliate marketing, sponsored content, digital products, or services. Multiple revenue sources significantly increase website valuation.
+                    </p>
+                    <div class="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Potential ROI:</strong> 150-400% by adding 2-3 revenue streams
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strategy 3 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-pink-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Design & UX Improvement</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Many websites are undervalued due to outdated design. Invest in modern, professional design and improved user experience. This increases conversion rates and makes the site more attractive to buyers.
+                    </p>
+                    <div class="bg-pink-500/10 border border-pink-500/20 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Potential ROI:</strong> 50-150% with conversion improvements
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strategy 4 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-green-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Automation & Systems</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Build automated systems and processes into the website. Make it a true passive income generator that requires minimal ongoing effort. Automated sites command premium valuations.
+                    </p>
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Potential ROI:</strong> 200-500% for fully automated properties
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strategy 5 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-yellow-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Niche Authority Building</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Transform a generic site into a niche authority. Build backlinks, create expert content, and establish thought leadership. Authority sites sell for significantly higher multiples.
+                    </p>
+                    <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Potential ROI:</strong> 300-600% by establishing authority
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Strategy 6 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-indigo-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Email List Building</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Build a large, engaged email list. Email lists are valuable assets that increase revenue potential and buyer interest. A website with 10K+ subscribers is worth significantly more.
+                    </p>
+                    <div class="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Potential ROI:</strong> 100-250% with engaged email list
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="py-24 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">Real Success Stories</h2>
+                <p class="section-subtitle">See how successful flippers have turned websites into profitable ventures</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="case-study-card p-8 rounded-2xl">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">The Forgotten Blog Flip</h3>
+                        <p class="text-sm text-gray-400">Health & Wellness Niche</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Purchase Price</p>
+                            <p class="text-2xl font-bold text-green-400">$3,500</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Improvement Investment</p>
+                            <p class="text-2xl font-bold text-blue-400">$1,200</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Sale Price (6 months later)</p>
+                            <p class="text-2xl font-bold text-purple-400">$18,000</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <p class="text-gray-400 text-sm mb-1">Total Profit</p>
+                            <p class="text-3xl font-bold gradient-text">$13,300 (294% ROI)</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        This blog was abandoned for 2 years but had excellent domain authority. We updated all content, added 50 new articles, implemented SEO best practices, and grew monthly traffic from 2K to 45K. The revenue grew from $200/month to $2,500/month, making it highly attractive to buyers.
+                    </p>
+                    
+                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 text-sm">
+                        <p class="text-gray-300"><strong>Key Strategy:</strong> Content refresh + SEO optimization + traffic growth</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-study-card p-8 rounded-2xl">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">The E-commerce Transformation</h3>
+                        <p class="text-sm text-gray-400">Niche Products</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Purchase Price</p>
+                            <p class="text-2xl font-bold text-green-400">$8,000</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Improvement Investment</p>
+                            <p class="text-2xl font-bold text-blue-400">$3,500</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Sale Price (8 months later)</p>
+                            <p class="text-2xl font-bold text-purple-400">$52,000</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <p class="text-gray-400 text-sm mb-1">Total Profit</p>
+                            <p class="text-3xl font-bold gradient-text">$40,500 (338% ROI)</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        This e-commerce site had poor conversion rates and limited marketing. We redesigned the store, optimized checkout flow, added email marketing automation, and implemented paid advertising. Monthly revenue increased from $3K to $15K, attracting serious buyers.
+                    </p>
+                    
+                    <div class="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4 text-sm">
+                        <p class="text-gray-300"><strong>Key Strategy:</strong> UX improvement + automation + revenue growth</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-study-card p-8 rounded-2xl">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">The SaaS Side Project</h3>
+                        <p class="text-sm text-gray-400">Software as a Service</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Purchase Price</p>
+                            <p class="text-2xl font-bold text-green-400">$12,000</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Improvement Investment</p>
+                            <p class="text-2xl font-bold text-blue-400">$5,000</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Sale Price (10 months later)</p>
+                            <p class="text-2xl font-bold text-purple-400">$95,000</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <p class="text-gray-400 text-sm mb-1">Total Profit</p>
+                            <p class="text-3xl font-bold gradient-text">$78,000 (433% ROI)</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        This SaaS tool had great potential but poor marketing and user experience. We rebuilt the landing page, created tutorial videos, improved documentation, and grew the user base from 150 to 800 active users. Monthly recurring revenue jumped from $2K to $8K.
+                    </p>
+                    
+                    <div class="bg-pink-500/10 border border-pink-500/20 rounded-lg p-4 text-sm">
+                        <p class="text-gray-300"><strong>Key Strategy:</strong> Product improvement + user growth + MRR increase</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="case-study-card p-8 rounded-2xl">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">The Affiliate Authority Site</h3>
+                        <p class="text-sm text-gray-400">Affiliate Marketing</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Purchase Price</p>
+                            <p class="text-2xl font-bold text-green-400">$2,000</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Improvement Investment</p>
+                            <p class="text-2xl font-bold text-blue-400">$800</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm mb-1">Sale Price (5 months later)</p>
+                            <p class="text-2xl font-bold text-purple-400">$22,000</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-700">
+                            <p class="text-gray-400 text-sm mb-1">Total Profit</p>
+                            <p class="text-3xl font-bold gradient-text">$19,200 (550% ROI)</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        This affiliate site was monetized but had poor content and low rankings. We created 100+ high-quality product review articles, optimized for long-tail keywords, and built backlinks. Monthly affiliate income grew from $500 to $4,500.
+                    </p>
+                    
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-sm">
+                        <p class="text-gray-300"><strong>Key Strategy:</strong> Content creation + SEO + affiliate optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Features Section -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">Tentrite Tools for Website Flippers</h2>
+                <p class="section-subtitle">Our platform provides everything you need to succeed in website flipping</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tool 1 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-blue-500">
+                    <div class="feature-icon mb-6">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Advanced Search Filters</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Find the perfect websites to flip with our advanced filtering system. Search by niche, traffic range, revenue, age, and more. Identify undervalued opportunities quickly.
+                    </p>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-purple-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Detailed Analytics</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Access comprehensive analytics for every listing. See traffic trends, revenue history, user behavior, and more. Make data-driven decisions for your flips.
+                    </p>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-pink-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Secure Escrow System</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Buy and sell with confidence using our secure escrow service. Funds are held safely until both parties confirm the successful transfer of all assets.
+                    </p>
+                </div>
+
+                <!-- Tool 4 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-green-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Mobile App Management</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Manage your flipping portfolio from anywhere. Our mobile app lets you browse listings, receive offers, and communicate with buyers on the go.
+                    </p>
+                </div>
+
+                <!-- Tool 5 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-yellow-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
+                        <i class="fas fa-search-engine"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">SEO Optimization Tools</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Every listing is automatically optimized for search engines. Get maximum visibility and attract qualified buyers with our built-in SEO tools.
+                    </p>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-indigo-500">
+                    <div class="feature-icon mb-6" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Expert Support</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Get help from our team of website flipping experts. Get guidance on pricing, negotiation, improvement strategies, and more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">No hidden fees, no surprises. Just straightforward pricing for website flippers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <!-- Selling -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-6">Selling Your Flipped Website</h3>
+                    
+                    <div class="mb-8">
+                        <p class="text-gray-400 text-sm mb-2">Listing Fee</p>
+                        <p class="text-5xl font-black gradient-text mb-2">$69</p>
+                        <p class="text-gray-400">One-time flat rate</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">No Commission</p>
+                                <p class="text-gray-400 text-sm">Keep 100% of your sale price</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Unlimited Listings</p>
+                                <p class="text-gray-400 text-sm">List as many websites as you want</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Global Reach</p>
+                                <p class="text-gray-400 text-sm">Access to millions of potential buyers</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">SEO Optimized</p>
+                                <p class="text-gray-400 text-sm">Automatic search engine optimization</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 text-center">
+                        <p class="text-sm text-gray-300">
+                            <strong>Example:</strong> Sell a website for $30,000, keep $30,000 after $69 fee
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Buying -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-purple-500 transition-all duration-300">
+                    <h3 class="text-2xl font-bold mb-6">Buying Websites to Flip</h3>
+                    
+                    <div class="mb-8">
+                        <p class="text-gray-400 text-sm mb-2">Buyer Fee</p>
+                        <p class="text-5xl font-black gradient-text mb-2">$0</p>
+                        <p class="text-gray-400">Completely free</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">No Buyer Fees</p>
+                                <p class="text-gray-400 text-sm">Purchase websites without any fees</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Secure Escrow</p>
+                                <p class="text-gray-400 text-sm">Protected transactions at no extra cost</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Due Diligence Tools</p>
+                                <p class="text-gray-400 text-sm">Access detailed analytics and verification</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-green-400 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Buyer Support</p>
+                                <p class="text-gray-400 text-sm">Expert guidance throughout purchase</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4 text-center">
+                        <p class="text-sm text-gray-300">
+                            <strong>Flip Example:</strong> Buy for $5,000, flip for $15,000, profit $10,000
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop&q=80" alt="Background" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-gray-900/80"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">Ready to Start Website Flipping?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Join our community of successful website flippers. Find undervalued websites, improve them, and sell for profit. Start your first flip today with Tentrite.
+                </p>
+                <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="cta-button inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 text-lg">
+                    <span>Start Your First Flip Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-gray-950">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-heading">Website Flipping FAQ</h2>
+                <p class="section-subtitle">Answers to common questions about website flipping</p>
+            </div>
+            
+            <div class="space-y-0">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left">
+                        <span class="text-lg font-semibold">How much money do I need to start website flipping?</span>
+                        <i class="faq-icon fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-400 leading-relaxed">
+                            You can start website flipping with as little as $500-$1,000. Many successful flippers started small and reinvested their profits into larger projects. The key is finding undervalued websites and adding value through improvements. As you gain experience and profit, you can invest in higher-priced websites with greater profit potential.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left">
+                        <span class="text-lg font-semibold">How long does a typical flip take?</span>
+                        <i class="faq-icon fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-400 leading-relaxed">
+                            A typical website flip takes 3-12 months, depending on the strategy and improvements needed. Quick flips focusing on design improvements might take 2-3 months, while flips involving significant content creation and SEO optimization might take 6-12 months. The timeline depends on your goals, the website's potential, and how much time you can dedicate to improvements.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left">
+                        <span class="text-lg font-semibold">What if I don't have technical skills?</span>
+                        <i class="faq-icon fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-400 leading-relaxed">
+                            You don't need to be technical to flip websites successfully. You can hire freelancers on platforms like Fiverr, Upwork, or Freelancer to handle design, development, and content creation. Focus on identifying opportunities and managing the project. Many successful flippers are project managers rather than technical experts. Your skills in finding opportunities and managing improvements are more important than technical knowledge.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left">
+                        <span class="text-lg font-semibold">What websites are easiest to flip?</span>
+                        <i class="faq-icon fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-400 leading-relaxed">
+                            The easiest websites to flip are those with strong fundamentals but neglected by current owners. Look for: established domains with good backlinks, websites with existing traffic but poor design, sites with revenue potential but limited monetization, and niche sites with passionate audiences. Avoid websites with penalties, malware, or structural problems. Start with niches you understand—your expertise makes improvements easier and faster.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left">
+                        <span class="text-lg font-semibold">How do I know what price to offer for a website?</span>
+                        <i class="faq-icon fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-400 leading-relaxed">
+                            Use the multiple of monthly revenue method: multiply monthly revenue by 12-36 (depending on stability and growth potential). Look at comparable sales on Tentrite and other marketplaces. Consider the website's age, traffic, authority, and growth potential. Always leave room for profit—aim to buy at 20-30x monthly profit (not revenue). Use tools like SimilarWeb and SEMrush to verify claims. When in doubt, research comparable websites that have sold recently.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full text-left">
+                        <span class="text-lg font-semibold">Can I flip websites without owning them?</span>
+                        <i class="faq-icon fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer hidden">
+                        <p class="text-gray-400 leading-relaxed">
+                            No, you must own the website to flip it on Tentrite. However, you can negotiate partnership deals where you improve a website for a percentage of the profits, but this is less common. The standard approach is to purchase full ownership, improve the website, and then sell it. This gives you complete control and the ability to make all necessary improvements without negotiating with the original owner.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-globe text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Tentrite</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The world's leading marketplace for buying and selling websites, apps, and digital businesses.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="index.html#features" class="text-gray-400 hover:text-blue-400 transition-colors">Features</a></li>
+                        <li><a href="index.html#benefits" class="text-gray-400 hover:text-blue-400 transition-colors">Benefits</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="blog.html" class="text-gray-400 hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="index.html#faq" class="text-gray-400 hover:text-blue-400 transition-colors">FAQ</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:shoutweb95@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope"></i>
+                                <span>shoutweb95@gmail.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tentritepremed.agency" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fas fa-globe"></i>
+                                <span>Visit Website</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="py-8 border-t border-gray-800 mb-8">
+                <div class="flex justify-center items-center gap-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-400 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-twitter text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-600 flex items-center justify-center transition-colors duration-300">
+                        <i class="fab fa-youtube text-white"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; <span id="year">2024</span> Tentrite. All rights reserved. | 
+                    <a href="privacy.html" class="hover:text-blue-400 transition-colors">Privacy Policy</a> | 
+                    <a href="terms.html" class="hover:text-blue-400 transition-colors">Terms of Service</a> | 
+                    <a href="blog.html" class="hover:text-blue-400 transition-colors">Blog</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
+            const mobileMenu = document.querySelector('header nav .mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Accordion Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const isOpen = !answer.classList.contains('hidden');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        answer?.classList.toggle('hidden');
+                        item.querySelector('.faq-icon')?.classList.toggle('rotate-180');
+                    });
+                }
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
